@@ -17,6 +17,7 @@ class Snake:
 
 
     def move(self):
+        #FOR PROPER ANIMATED MOVEMENT OF THE SNAKE
         for i in range(len(self.segements) - 1, 0, -1):
             x_pos = self.segements[i - 1].xcor()
             y_pos = self.segements[i - 1].ycor()
