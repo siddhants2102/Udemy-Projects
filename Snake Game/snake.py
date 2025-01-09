@@ -5,17 +5,20 @@ class Snake:
     def __init__(self):
 
         self.segements = []
-
-        for i in STARTING_POSITION:
-            new_segement = Turtle("square")
-            new_segement.color("White")
-            new_segement.penup()
-            new_segement.goto(i)
-            self.segements.append(new_segement)
+        for position in STARTING_POSITION:
+            self.add_segment(position)
 
         self.snake_head=self.segements[0]
 
+    def add_segment(self,position):
+        new_segement = Turtle("square")
+        new_segement.color("White")
+        new_segement.penup()
+        new_segement.goto(position)
+        self.segements.append(new_segement)
 
+    def snake_extention(self):
+        self.add_segment(self.segements[-1].position())
     def move(self):
         #FOR PROPER ANIMATED MOVEMENT OF THE SNAKE
         for i in range(len(self.segements) - 1, 0, -1):

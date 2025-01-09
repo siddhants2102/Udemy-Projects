@@ -16,7 +16,7 @@ turtles = []
 
 if user_bet in colour:
     race_on = True
-
+    screen.tracer(0)
     start_turtle = Turtle()
     end_turtle = Turtle()
 
@@ -49,6 +49,10 @@ if user_bet in colour:
         new_turtle.penup()
         new_turtle.goto(x=-240, y=(-70 + (i * 40)))
         turtles.append(new_turtle)
+
+    screen.update()
+    screen.tracer(1)
+
 else:
     tim = Turtle()
     tim.penup()
